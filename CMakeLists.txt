@@ -85,6 +85,18 @@ target_link_libraries(ParachutePlugin PRIVATE
   gz-sim${GZ_SIM_VER}::gz-sim${GZ_SIM_VER}
 )
 
+add_library(VelocityControl
+  SHARED
+  src/VelocityControl.cc
+)
+target_include_directories(VelocityControl PRIVATE
+  include
+)
+target_link_libraries(VelocityControl PRIVATE
+  gz-sim${GZ_SIM_VER}::gz-sim${GZ_SIM_VER}
+  gz-common${GZ_COMMON_VER}::gz-common${GZ_COMMON_VER}
+)
+
 add_library(CameraZoomPlugin
   SHARED
   src/CameraZoomPlugin.cc
@@ -120,6 +132,7 @@ install(
   TARGETS
   ArduPilotPlugin
   ParachutePlugin
+  VelocityControl
   CameraZoomPlugin
   GstCameraPlugin
   DESTINATION lib/${PROJECT_NAME}
