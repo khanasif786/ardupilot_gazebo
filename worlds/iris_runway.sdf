@@ -125,5 +125,10 @@
       <pose degrees="true">0 1 0.05 0 0 0</pose>
     </include>
  
+    <include>
+      <uri>model://car_polo</uri>
+      <pose degrees="true">0 3 0.195 0 0 90</pose>
+    </include>
+
   </world>
 </sdf>
